@@ -5,22 +5,41 @@ public class RailRoadCell extends Cell {
 	static public String COLOR_GROUP = "RAILROAD";
 	static private int price;
 
+	/**
+	 * Sets the static base rent amount for all railroad cells.
+	 * @param baseRent the base rent to be assigned to railroad cells
+	 */
 	public static void setBaseRent(int baseRent) {
 		RailRoadCell.baseRent = baseRent;
 	}
 
+	/**
+	 * Sets the static purchase price for all railroad cells.
+	 * @param price the price to purchase a railroad cell
+	 */
 	public static void setPrice(int price) {
 		RailRoadCell.price = price;
 	}
 	
+	/**
+	 * Returns the purchase price of the railroad cell.
+	 * @return the current price of the railroad cell
+	 */
 	public int getPrice() {
 		return RailRoadCell.price;
 	}
 
+	/**
+	 * Calculates and returns the rent owed for landing on this railroad cell based on ownership.
+	 * @return the rent amount to be paid
+	 */
 	public int getRent() {
 		return RailRoadCell.baseRent * (int)Math.pow(2, theOwner.numberOfRR() - 1);
 	}
 	
+	/**
+	 * Executes the action when a player lands on this railroad cell, including rent payment if owned by another player.
+	 */
 	public void playAction() {
 		Player currentPlayer = null;
 		if(!isAvailable()) {

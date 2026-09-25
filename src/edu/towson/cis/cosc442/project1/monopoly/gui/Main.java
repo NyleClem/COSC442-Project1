@@ -6,6 +6,11 @@ import edu.towson.cis.cosc442.project1.monopoly.*;
 
 public class Main {
 
+	/**
+	 * Prompts the user to input the number of players and validates it against the maximum allowed players.
+	 * @param window MainWindow instance used as the parent component for dialog boxes.
+	 * @return The validated number of players input by the user.
+	 */
 	private static int inputNumberOfPlayers(MainWindow window) {
 		int numPlayers = 0;
 		while(numPlayers <= 0 || numPlayers > GameMaster.MAX_PLAYER) {
@@ -28,6 +33,10 @@ public class Main {
 	}
 
 	@SuppressWarnings("deprecation")
+	/**
+	 * Initializes and starts the Monopoly game application, optionally setting test mode and custom game board via command-line arguments.
+	 * @param args Command-line arguments for optional test mode and custom game board class name.
+	 */
 	public static void main(String[] args) {
 		GameMaster master = GameMaster.instance();
 		MainWindow window = new MainWindow();

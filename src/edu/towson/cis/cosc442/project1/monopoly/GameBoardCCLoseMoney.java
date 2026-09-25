@@ -2,6 +2,9 @@ package edu.towson.cis.cosc442.project1.monopoly;
 
 
 public class GameBoardCCLoseMoney extends GameBoard {
+    /**
+     * Constructs a game board setup for Monopoly including properties, community chest and chance cards with money losing effects, jail, and their related configurations.
+     */
     public GameBoardCCLoseMoney() {
 		super();
 		PropertyCell blue1 = new PropertyCell();
