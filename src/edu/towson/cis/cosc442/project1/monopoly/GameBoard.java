@@ -45,7 +45,7 @@ public class GameBoard {
 	public void addCell(PropertyCell cell) {
 		String colorGroup = cell.getColorGroup();
 		int propertyNumber = getPropertyNumberForColor(colorGroup);
-		colorGroups.put(colorGroup, new Integer(propertyNumber + 1));
+		colorGroups.put(colorGroup,propertyNumber + 1);
         cells.add(cell);
 	}
 
@@ -54,7 +54,7 @@ public class GameBoard {
      * @return the drawn Community Chest Card
      */
     public Card drawCCCard() {
-        Card card = (Card)communityChestCards.get(0);
+        Card card = communityChestCards.get(0);
         communityChestCards.remove(0);
         addCard(card);
         return card;
@@ -65,7 +65,7 @@ public class GameBoard {
      * @return the drawn Chance Card
      */
     public Card drawChanceCard() {
-        Card card = (Card)chanceCards.get(0);
+        Card card = chanceCards.get(0);
         chanceCards.remove(0);
         addCard(card);
         return card;
@@ -77,7 +77,7 @@ public class GameBoard {
 	 * @return the Cell at the specified index
 	 */
 	public Cell getCell(int newIndex) {
-		return (Cell)cells.get(newIndex);
+		return cells.get(newIndex);
 	}
 	
 	/**
@@ -116,7 +116,7 @@ public class GameBoard {
 	 * @return the number of properties in that color group
 	 */
 	public int getPropertyNumberForColor(String name) {
-		Integer number = (Integer)colorGroups.get(name);
+		Integer number = colorGroups.get(name);
 		if(number != null) {
 			return number.intValue();
 		}
@@ -130,7 +130,7 @@ public class GameBoard {
 	 */
 	public Cell queryCell(String string) {
 		for(int i = 0; i < cells.size(); i++){
-			Cell temp = (Cell)cells.get(i); 
+			Cell temp = cells.get(i); 
 			if(temp.getName().equals(string)) {
 				return temp;
 			}
@@ -145,7 +145,7 @@ public class GameBoard {
 	 */
 	public int queryCellIndex(String string){
 		for(int i = 0; i < cells.size(); i++){
-			Cell temp = (Cell)cells.get(i); 
+			Cell temp = cells.get(i); 
 			if(temp.getName().equals(string)) {
 				return i;
 			}
